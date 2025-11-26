@@ -10,7 +10,7 @@ function FullName() {
     const lastName = e.target.lastname.value.trim();
 
     
-    if (!firstName || !lastName) {
+    if (!firstName && !lastName) {
       setFullName(""); 
       return;
     }
