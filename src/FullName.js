@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-function FullName() {
-  const [fullname, setFullName] = useState("");
+const FullName = () => {
+ const [fullname, setFullName] = useState("");
 
   const displayFullName = (e) => {
     e.preventDefault();
@@ -10,8 +10,8 @@ function FullName() {
     const lastName = e.target.lastname.value.trim();
 
     
-    if (!firstName && !lastName) {
-      setFullName(""); 
+    if (!firstName || !lastName) {
+      setFullName("");
       return;
     }
 
@@ -30,6 +30,7 @@ function FullName() {
             className="form-control"
             name="firstname"
             id="firstname"
+            required
           />
         </div>
 
@@ -40,6 +41,7 @@ function FullName() {
             className="form-control"
             name="lastname"
             id="lastname"
+            required
           />
         </div>
 
@@ -47,10 +49,9 @@ function FullName() {
           Submit
         </button>
       </form>
-
       <p>{fullname}</p>
     </div>
   );
 }
 
-export default FullName;
+export default FullName
